@@ -45,3 +45,4 @@ try:
 except KeyboardInterrupt:
     # Turn off all LEDs on exit
     set_color_all((0, 0, 0))
+
