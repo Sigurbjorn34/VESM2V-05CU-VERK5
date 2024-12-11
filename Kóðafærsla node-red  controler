@@ -9,14 +9,14 @@ import math
 def connect_wifi():
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
-    wlan.connect('TskoliVESM', 'Fallegurhestur')  # Replace with your WiFi credentials
+    wlan.connect('TskoliVESM', 'Fallegurhestur') 
     while not wlan.isconnected():
         time.sleep(1)
     print('Connected to WiFi:', wlan.ifconfig())
 
 # MQTT setup
 def setup_mqtt():
-    client = MQTTClient("esp32", "10.201.48.85")  # Replace with Raspberry Pi's IP address
+    client = MQTTClient("esp32", "10.201.48.85")  
     try:
         print("Attempting to connect to MQTT broker...")
         client.connect()
@@ -44,7 +44,7 @@ class Servo:
         self.us = 0
         self.freq = freq
         self.angle = angle
-        self.pwm = machine.PWM(machine.Pin(pin), freq=freq, duty=0)  # Correcting the Pin definition
+        self.pwm = machine.PWM(machine.Pin(pin), freq=freq, duty=0)  
 
     def write_us(self, us):
         if us == 0:
